@@ -7,15 +7,15 @@ def caesar_cipher(string, shift)
 		if punctuation.include?(letter)
 			shifted_value = letter
 		else
-			if letter.ord > "Z".ord
+			if letter.ord > "Z".ord #checking to see if lowercase or uppercase
 				shifted_value = letter.ord + shift
-				if shifted_value > "z".ord
-					shifted_value -= 26
+				if shifted_value > "z".ord #little z as this letter is lowercase
+					shifted_value -= 26 
 				end
-			else
-				shifted_value = letter.ord + shift
-				if shifted_value > "Z".ord
-					shifted_value -= 26
+			else #otherwise, assume uppercase
+				shifted_value = letter.ord + shift 
+				if shifted_value > "Z".ord #checking to see if overshot last letter in alphabet
+					shifted_value -= 26 #wrap around back to start of alphabet if we have overshot
 				end
 			end
 			shifted_value = shifted_value.chr
