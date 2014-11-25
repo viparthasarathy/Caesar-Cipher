@@ -1,5 +1,5 @@
 def caesar_cipher(string, shift)
-	#takes string and int, shifts each character in string by int value, ignores spaces
+	#takes string and int, shifts each character in string by int value, ignores spaces and punctuation in shifting
 	letters = string.split("")
 	shifted_string = []
 	punctuation = [",", " ", ".", "!", "?", "'", ";", ":"]
